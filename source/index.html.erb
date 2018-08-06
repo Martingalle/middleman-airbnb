@@ -2,7 +2,7 @@
 title: Le Wagon - Middleman
 ---
 
-<div id="home">
+<!-- <div id="home">
   <div class="home-content">
     <%= image_tag "logo.png", width: "200" %>
     <p>
@@ -12,4 +12,33 @@ title: Le Wagon - Middleman
       <%= link_to "More about this template", "about.html" %>
     </p>
   </div>
+</div> -->
+
+
+<div class="wrapper-banner">
+  <%= partial "layouts/banner" %>
+</div>
+
+<div class="container">
+  <div class="wrapper-cards">
+    <ul class="list-inline">
+      <div class="row">
+        <% data.cities.each do |city| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <li>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= "https://kitt.lewagon.com/placeholder/cities/#{city[:name].downcase}" %>');">
+              <div class="card-category">Popular</div>
+              <div class="card-description">
+                <h2>Le Wagon <%= city[:name] %></h2>
+                <p><%= city[:baseline] %></p>
+              </div>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{city[:name]}", class: "card-user" %>
+              <a class="card-link" href="#" ></a>
+            </li>
+          </div>
+        <% end %>
+      </div>
+    </ul>
+  </div>
+</div>
 </div>

@@ -1,0 +1,115 @@
+<% flat = data.flats[owner] %>
+
+<!-- Inject flat data in template -->
+
+<div class="wrapper-city">
+  <div class="flats" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= "https://kitt.lewagon.com/placeholder/cities/#{flat.city_slug}" %>'); background-position: center">
+  </div>
+</div>
+
+<div class="wrapper-user">
+  <div class="container">
+    <div class="owner">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+          <div class="big-flat-owner">
+            <div class="flat-owner text-center">
+              <div>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle" %>
+              </div>
+              <p><%= flat.name %></p>
+            </div>
+            <div class="flat-description">
+              <h1><%= flat.description %></h1>
+              <h3><%= flat.city_name %></h3>
+              <ul>
+                <%= flat.rating.times do "<i>hello</i>" end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="flat-booking">
+            <div class="form">
+              <h1>Book this flat</h1>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <input type="input" class="form-control" id="checkin" aria-describedby="emailHelp" placeholder="checkin">
+                  </div>
+                  <div class="col-xs-6">
+                    <input type="input" class="form-control" id="checkout" aria-describedby="emailHelp" placeholder="checkout">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <select class="form-control" id="numberOfGuests">
+                  <option>1 guest</option>
+                  <option>2 guests</option>
+                  <option>3 guests</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-danger width-100">Book it</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper-room">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <div class="room-about">
+          <h1>About this flat</h1>
+          <p>This one bedroom studio lodges 2 people (there's 1 double bed) it is located in the city center, in a calm traditional residential area near city´s main Avenue - 3 minutes walk from Sacré Coeur.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="room-details">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <p>The Space</p>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <p>Accommodates: <%= flat.accomodate %></p>
+          <p>Bathrooms: <%= flat.bathroom %></p>
+          <p>Bed types: <%= flat.bed_type %></p>
+          <p>Bedrooms: <%= flat.bedroom %></p>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <p>Beds: <%= flat.bed %></p>
+          <p>Property type: <%= flat.property_type %></p>
+          <p>Room type: <%= flat.room_type %></p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="room-details">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <p>Amenities</p>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <ul>
+            <%= flat.wifi ? "<li><i class='fa fa-wifi'></i><strong>Wifi</strong></li>" : "" %>
+            <%= flat.kitchen ? "<li><i class='fa fa-cutlery'></i><strong>Cultlery</strong></li>" : "" %>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <ul>
+            <%= flat.tv ? "<li><i class='fa fa-desktop'></i><strong>TV</strong></li>" : "" %>
+            <%= flat.welcome_drink ? "<li><i class='fa fa-glass'></i><strong>Welcome Drink</strong></li>" : "" %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

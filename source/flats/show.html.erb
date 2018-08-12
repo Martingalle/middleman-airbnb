@@ -23,7 +23,11 @@
               <h1><%= flat.description %></h1>
               <h3><%= flat.city_name %></h3>
               <ul>
-                <%= flat.rating.times do "<i>hello</i>" end %>
+                <%= flat.rating >= 1 ? "<i class='fa fa-star'></i>" : "" %>
+                <%= flat.rating >= 2 ? "<i class='fa fa-star'></i>" : "" %>
+                <%= flat.rating >= 3 ? "<i class='fa fa-star'></i>" : "" %>
+                <%= flat.rating >= 4 ? "<i class='fa fa-star'></i>" : "" %>
+                <%= flat.rating >= 5 ? "<i class='fa fa-star'></i>" : "" %>
               </ul>
             </div>
           </div>

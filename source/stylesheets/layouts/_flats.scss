@@ -43,6 +43,11 @@
   font-size: 16px;
   margin-bottom: 0;
   }
+
+  ul {
+    padding-left:0;
+    color: #eaea7d;
+  }
 }
 
 .flats {
@@ -51,7 +56,8 @@
 
 .wrapper-room {
   background-color: #DDDDDD;
-  height : 70vh;
+  height : 100%;
+  padding: 20px 0;
 }
 
 .big-flat-owner {
